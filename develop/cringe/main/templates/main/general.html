@@ -1,0 +1,22 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+{% block css %} 
+<link rel="stylesheet" href="{% static 'deps/css/my_footer_css.css' %}"> 
+{% endblock css %}
+
+{% block content %}
+<h1 class="mt-5 pt-5" style="text-align: left; width: 100%;"><strong>Front-End разработка</strong></h1>
+<p style="font-size: 35px; text-align: left; width: 100%;"><strong>Front-End разработка включает создание пользовательского интерфейса и взаимодействие пользователя с веб-сайтом. 
+    Это включает работу с HTML, CSS и JavaScript для создания интерактивных и привлекательных страниц. 
+    Front-End разработчики обеспечивают, чтобы сайт выглядел и работал хорошо на всех устройствах и браузерах. 
+    Для обучения Front-End разработке можно воспользоваться следующими ресурсами:</strong></p>
+<ul style="text-align: left; width: 100%;">
+    <li style="font-size: 35px;"><strong><a href="https://www.freecodecamp.org/">FreeCodeCamp</a></strong></li>
+    <li style="font-size: 35px;"><strong><a href="https://www.codecademy.com/">Codecademy</a></strong></li>
+    <li style="font-size: 35px;"><strong><a href="https://www.udemy.com/">Udemy</a></strong></li>
+</ul>
+{% endblock content %}
+
+{% block footer %}{% endblock footer %}

@@ -5,7 +5,21 @@ body {
   background-position: center center;
   background-size: cover;
   height: 100%;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5); /* Черный цвет с 50% прозрачностью */
 }
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Черный цвет с 50% прозрачностью */
+  z-index: -1;
+}
+
 
 .dropdown-toggle::after {
   content: none;
@@ -36,3 +50,53 @@ body {
   border-radius: 15px;
   font-size: 0.7rem;
 }
+
+/* svoe */
+
+.title {
+  text-align: left;
+  width: 100%;
+  font-weight: bold;
+  margin-top: 50px;
+  padding-top: 50px;
+  font-size: 2em;
+}
+
+.description {
+  font-size: 1.2em;
+  text-align: left;
+  width: 100%;
+  font-weight: bold;
+}
+
+.resource-list {
+  text-align: left;
+  width: 100%;
+  font-size: 1.2em;
+}
+
+.resource-list li {
+  list-style-type: none;
+}
+
+.resource-list li a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+}
+
+.resource-list li a:hover {
+  text-decoration: underline;
+}
+
+.image-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.image-row img {
+  width: 30%;
+  height: auto;
+}
+
