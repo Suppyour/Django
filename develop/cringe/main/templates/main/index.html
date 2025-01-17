@@ -1,167 +1,24 @@
+{% extends "main/base.html" %}
 {% load static %}
-{% block css %}<link rel="stylesheet" href="{% static 'deps/css/my_footer_css.css' %}">{% endblock css %}
+
+{% block css %} 
+<link rel="stylesheet" href="{% static 'deps/css/my_footer_css.css' %}"> 
+{% endblock css %}
+
+{% block content %}
+
+<h1 class="mt-5 pt-5" style="text-align: left; width: 100%;"><strong>Front-End разработка</strong></h1>
+<p style="font-size: 35px; text-align: left; width: 100%;"><strong>Front-End разработка включает создание пользовательского интерфейса и взаимодействие пользователя с веб-сайтом. 
+    Это включает работу с HTML, CSS и JavaScript для создания интерактивных и привлекательных страниц. 
+    Front-End разработчики обеспечивают, чтобы сайт выглядел и работал хорошо на всех устройствах и браузерах. 
+    Для обучения Front-End разработке можно воспользоваться следующими ресурсами:</strong></p>
+<ul style="text-align: left; width: 100%;">
+    <li style="font-size: 35px;"><strong><a href="https://www.freecodecamp.org/">FreeCodeCamp</a></strong></li>
+    <li style="font-size: 35px;"><strong><a href="https://www.codecademy.com/">Codecademy</a></strong></li>
+    <li style="font-size: 35px;"><strong><a href="https://www.udemy.com/">Udemy</a></strong></li>
+</ul>
 
 
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">Home</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle text-white" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Общая статистика
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item  text-white" href="#">Динамика уровня зарплат</a></li>
-                                <li><a class="dropdown-item  text-white" href="#">Динамика количества вакансий</a></li>
-                                <li><a class="dropdown-item  text-white" href="#">Уровень зарплат по городам</a></li>
-                                <li><a class="dropdown-item  text-white" href="#">Доля вакансий по городам</a></li>
-                                <li><a class="dropdown-item  text-white" href="#">ТОП-20 навыков</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link  text-white" href="carts/cart.html">Востребованность</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link  text-white" href="users/login.html">География</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link  text-white" href="users/login.html">Навыки</a>
-                        </li>
-                        <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle text-white" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Мой профиль
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item  text-white" href="users/profile.html">Личный кабинет</a>
-                                </li>
-                                <li><a class="dropdown-item  text-white" href="#">Админ панель</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item  text-white" href="#">Выйти</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success text-white" type="submit">Поиск</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <section>
-        <div class="container">
-            <!-- Каталог и корзина с фиксированным расположением на странице -->
-            <div class="row mt-1 position-fixed z-3">
-                <!-- Разметка модального окна корзины -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-scrollable">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <h3 class="text-center mb-4">Корзина</h3>
-                                <div class="container" id="cart-items-container">
-                                    <!-- Разметка корзины -->
-                                    <div class="card mb-3 text-bg-light shadow-lg">
-                                        <div class="card-header">
-                                            <h5 class="card-title">Товар</h5>
-                                        </div>
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item">
-                                                <div class="row text-center">
-                                                    <div class="col p-0">
-                                                        <div class="input-group">
-                                                            <span class="input-group-btn">
-                                                                <button type="button" class="btn btn-dark btn-sm decrement"
-                                                                    data-cart-id="" data-cart-change-url="">-</button>
-                                                            </span>
-                                                            <input type="text" class="form-control number" value="1"
-                                                                readonly>
-                                                            <span class="input-group-btn">
-                                                                <button type="button" class="btn btn-dark btn-sm increment"
-                                                                    data-cart-id="" data-cart-change-url="">+</button>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col p-0">
-                                                        <p>x 100.00 = </p>
-                                                    </div>
-                                                    <div class="col p-0"><strong>100.00 $</strong></div>
-                                                    <div class="col p-0">
-                                                        <a href="#" class="remove-from-cart" data-cart-id="">
-                                                            <img class="mx-1" src="{% static "deps/icons/trash3-fill.svg" %}"
-                                                                alt="Catalog Icon" width="16" height="16">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="card mb-3 shadow-lg">
-                                        <div class="card-footer">
-                                            <p class="float-left">Итого <strong>1</strong> товар(а) на сумму</p>
-                                            <h4 class="float-left"><strong>100.00 $</strong></h4>
-                                        </div>
-                                    </div>
-                                    <!-- Закончилась разметка корзины -->
-                                </div>
-                                <a class="btn btn-dark" href="orders/create_order.html">
-                                    Оформить заказ
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Закончилась разметка модального окна -->
-            </div>
-        </div>
-        <!-- Контент -->
-        <div class="container">
-            <div class="row mt-1">
-                <div class="col-lg-2">
-                    <!-- Оставить пока -->
-                </div>
-                <div class="col-lg-10">
-                    <!-- Контент на странице -->
-                    <h1 class="mt-5 pt-5" style="text-align: left;"><strong>Front-End разработка</strong></h1>
-                    <p style="font-size: 35px; text-align: left;"><strong>Front-End разработка включает создание пользовательского интерфейса и взаимодействие пользователя с веб-сайтом. 
-                        Это включает работу с HTML, CSS и JavaScript для создания интерактивных и привлекательных страниц. 
-                        Front-End разработчики обеспечивают, чтобы сайт выглядел и работал хорошо на всех устройствах и браузерах. 
-                        Для обучения Front-End разработке можно воспользоваться следующими ресурсами:</strong></p>
-                    <ul style="text-align: left;">
-                        <li style="font-size: 35px;"><strong><a href="https://www.freecodecamp.org/">FreeCodeCamp</a></strong></li>
-                        <li style="font-size: 35px;"><strong><a href="https://www.codecademy.com/">Codecademy</a></strong></li>
-                        <li style="font-size: 35px;"><strong><a href="https://www.udemy.com/">Udemy</a></strong></li>
-                    </ul>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-    <footer class="py-4 bg-dark">
-        <div class="container">
-            <p class="m-0 text-end text-white">Copyright &copy; Порсев Михаил Владимирович 2025 РИ-230911</p>
-        </div>
-    </footer>
-    <script src="{% static "deps/js/jquery/jquery-3.7.0.min.js" %}"></script>
-    <script src="{% static "deps/js/jquery-events.js" %}"></script>
-    <script src="{% static "deps/js/jquery-ajax.js" %}"></script>
-    <script src="{% static "deps/js/bootstrap/bootstrap.bundle.min.js" %}"></script>
-</body>
+{% endblock content %}
 
-</html>
+{% block footer %}{% endblock footer %}
