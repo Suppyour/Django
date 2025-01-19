@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index, name = 'index'),
     path('general/',views.general, name = 'general'),
+    path('index.html',views.index_html, name='index_html'),
 ]

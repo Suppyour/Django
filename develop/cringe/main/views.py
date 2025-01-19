@@ -7,6 +7,7 @@ def index(request):
         'content': "Front-End разработка"
     }
     return render(request, 'main/index.html', context)
+
 def general(request):
     context: dict = {
         'title': 'Общее',
@@ -14,3 +15,10 @@ def general(request):
         'text_on_page': "Какой то текст"
     }
     return render(request, 'main/general.html', context)
+
+def index_html(request):
+    context: dict = {
+        'title': 'Front-End',
+        'content': "Front-End разработка"
+    }
+    return render(request, 'main/index.html', context)
