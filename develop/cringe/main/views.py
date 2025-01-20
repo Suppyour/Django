@@ -22,3 +22,24 @@ def index_html(request):
         'content': "Front-End разработка"
     }
     return render(request, 'main/index.html', context)
+
+def demand(request):
+    context: dict = {
+        'title': 'Востребованность',
+        'content': "Front-End разработка"
+    }
+    return render(request, 'main/demand.html', context)
+
+def geography(request):
+    context: dict = {
+        'title': 'География',
+        'content': "Front-End разработка"
+    }
+    return render(request, 'main/geography.html', context)
+
+def skills(request):
+    context: dict = {
+        'title': 'Навыки',
+        'content': "Front-End разработка"
+    }
+    return render(request, 'main/skills.html', context)

@@ -24,4 +24,7 @@ urlpatterns = [
     path('',views.index, name = 'index'),
     path('general/',views.general, name = 'general'),
     path('index.html',views.index_html, name='index_html'),
+    path('demand.html', views.demand, name='demand'),
+    path('geography.html', views.geography, name='geography'),
+    path('skills.html', views.skills, name='skills'),
 ]
